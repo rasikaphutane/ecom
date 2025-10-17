@@ -54,10 +54,10 @@ pip install fastapi uvicorn pandas numpy sentence-transformers torch transformer
 python -m nltk.downloader punkt punkt_tab
 
 3. Set Hugging Face Token
-# Windows
+Windows: 
 set HUGGINGFACE_TOKEN=hf_xxx
 
-# Linux/Mac
+Linux/Mac: 
 export HUGGINGFACE_TOKEN='hf_xxx'
 
 4. Initialize the Database
@@ -67,10 +67,10 @@ python generate_data.py
 5. Start Ollama (for Mistral)
 ollama run mistral:7b-instruct-q4_K_M
 
-▶️ Run the FastAPI Server
+## ▶️ Run the FastAPI Server
 uvicorn main:app --host 0.0.0.0 --port 1234
 
-🌐 API Access
+## 🌐 API Access
 Swagger UI
 http://localhost:1234/docs
 
@@ -96,3 +96,4 @@ curl -X POST http://localhost:1234/recommendations \
 📜 License
 
 MIT License – free to use and modify.
+
