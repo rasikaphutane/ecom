@@ -1,213 +1,143 @@
-🛍️ AI-Powered E-Commerce Recommendation System
-📋 Project Overview
-I've built a complete AI-powered product recommendation system that provides personalized product suggestions with intelligent explanations. The system uses machine learning embeddings and cosine similarity to match users with products they'll love.
+E-Commerce Recommendation System
+Overview
+This project is an AI-powered e-commerce recommendation system built with FastAPI, delivering personalized product recommendations with human-like explanations. It uses user behavior (views, purchases, reviews) from ecommerce.db to recommend products, leveraging embeddings (all-MiniLM-L6-v2) and LLMs (Flan-T5-Base, TinyLLaMA, Mistral) for explanations. The system targets top-5 recommendations, conversational explanations (~100 words), and handles sentiment analysis with distilbert or a keyword-based fallback. The FastAPI app provides endpoints for recommendations, user behavior, and product filtering, with CORS support for web integration.
+Features
 
-🏗️ What I Built
-🔧 Core Components
-FastAPI Backend - RESTful API with real-time recommendations
+Recommendation Engine: Uses cosine similarity on product embeddings to suggest top-5 products based on user interactions (purchases, views).
+Human-Like Explanations: Generates conversational explanations (e.g., “Hey, this Sweater is perfect for you!”) using LLMs, highlighting user style, ratings, and positive sentiments.
+Sentiment Analysis: Applies distilbert for review sentiment, with a keyword-based fallback (e.g., positive: “great,” “cozy”; negative: “poor,” “terrible”) due to API authentication issues.
+FastAPI Endpoints:
+GET /: Health check with system status.
+GET /health: Alias for health check.
+GET /users/{user_id}/behavior: Returns user behavior (purchases, views, categories, ratings).
+POST /recommendations: Generates personalized recommendations with explanations.
+GET /products: Filters products by category, rating, or limit.
 
-Machine Learning Engine - Sentence transformers for product embeddings
 
-SQLite Database - Synthetic e-commerce data with users, products, and interactions
+Database: Uses ecommerce.db (~100 interactions, ~50 products, ~30 users) for user and product data.
+Metrics: Tracks explanation quality via length (100 words), Jaccard overlap (0.4-0.5), and sentiment score (~0.9).
 
-Frontend Interface - Clean HTML/JS interface for testing the system
+Project Evolution
 
-🧠 AI/ML Architecture
-Embedding Model: all-MiniLM-L6-v2 (384-dimensional embeddings)
+Initial Script (generate_recom.py):
 
-Similarity Algorithm: Cosine similarity between user and product vectors
+Used Flan-T5-Base for explanations, all-MiniLM-L6-v2 for embeddings, and SQLite for data.
+Generated top-10 recommendations, later refined to top-5 per user request.
+Explanations were list-heavy (e.g., “Sweater (Clothing): ...”) and short (e.g., 49 words).
+Sentiment analysis relied on keyword-based fallback due to distilbert 401 errors.
 
-Recommendation Logic: Collaborative filtering based on user behavior
 
-Explanation Generation: Context-aware reasoning for why products are recommended
+Improvements:
 
-📊 Database Schema
-Synthetic Data Structure
-Products Table (products):
+Prompt Refinement: Updated prompts to be conversational (“Hey, I think this is perfect for you!”), targeting ~100 words and avoiding repetitive product lists.
+Humanization Step: Added humanize_explanation to remove technical terms (e.g., “POSITIVE, score: 0.75”) and repetitive lists, ensuring natural tone.
+LLM Switch: Replaced Flan-T5-Base with TinyLLaMA (1.1B) for better natural language, as Mistral (7B) was too large (14GB). TinyLLaMA (2GB) fits 4GB GPU/CPU.
+Sentiment Fix: Expanded keyword lists (e.g., added “cozy,” “uncomfortable”) for robust fallback sentiment analysis.
+HUGGINGFACE_TOKEN: Fixed environment variable lookup from hf_LvOqnLTW... to HUGGINGFACE_TOKEN.
 
-productId - Unique product identifier
 
-productName - Name of the product
+FastAPI Integration:
 
-productCategory - Electronics, Clothing, Books, etc.
+Built a FastAPI app for scalable API deployment, replacing script-based testing.
+Uses Mistral (7B, via Ollama) for explanations, with improved prompt for concise, personalized outputs.
+Added CORS middleware, Pydantic models (RecommendationRequest, ProductRecommendation), and endpoints for recommendations and behavior analysis.
+Handles errors gracefully (e.g., HTTP 404 for invalid users, 500 for server errors).
 
-productDescription - Detailed product description
 
-avgRating - Average user rating (1-5 stars)
 
-Users Table (users):
+Setup Instructions
+Prerequisites
 
-userId - Unique user identifier
+Python 3.8+
+SQLite database (ecommerce.db) with products, users, and interactions tables.
+Ollama server running locally (http://localhost:11434) with Mistral 7B model.
+Optional: GPU with ~4GB VRAM for TinyLLaMA or ~14GB for Mistral.
 
-interactions - Comma-separated list of product IDs the user has interacted with
+Installation
 
-Interactions Table (interactions):
+Clone the repository:git clone <repository-url>
+cd ecommerce-recommendation
 
-userId - User identifier
 
-productId - Product identifier
+Install dependencies:pip install fastapi uvicorn pandas numpy sentence-transformers torch transformers scikit-learn requests nltk
+python -m nltk.downloader punkt punkt_tab
 
-boughtStatus - 1 if purchased, 0 if not
 
-viewStatus - 1 if viewed, 0 if not
+Set up Hugging Face token:export HUGGINGFACE_TOKEN='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'  # Linux/Mac
+set HUGGINGFACE_TOKEN=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    # Windows
 
-🚀 How to Run
-1. Install Dependencies
-bash
-pip install fastapi uvicorn pandas numpy torch sentence-transformers scikit-learn requests
-2. Start the Backend Server
-bash
-uvicorn main:app --host 0.0.0.0 --port 1234 --reload
-3. Access the Application
-API Documentation: http://localhost:8080/docs
 
-Frontend Interface: Open index.html in your browser
+Create and populate ecommerce.db (example script: init_db.py):python init_db.py
+python generate_data.py
 
-Health Check: http://localhost:8080/health
 
-📡 API Endpoints
-🔍 User Management
-GET /users/{user_id}/behavior - Get user's purchase history and preferences
+Start Ollama server:ollama run mistral:7b-instruct-q4_K_M
 
-Returns: Total purchases, views, top categories, and recent purchases
 
-🎯 Recommendations
-POST /recommendations - Generate personalized product recommendations
 
-Parameters:
+Running the API
 
-user_id: Target user ID
+Start the FastAPI server:uvicorn main:app --host 0.0.0.0 --port 1234
 
-top_k: Number of recommendations (default: 5)
 
-min_rating: Minimum product rating (default: 4.0)
+Access the API:
+Swagger UI: http://localhost:1234/docs
+Health check: curl http://localhost:1234/
+Recommendations: curl -X POST http://localhost:1234/recommendations -H "Content-Type: application/json" -d '{"user_id": 1, "top_k": 5, "min_rating": 4.0}'
+User behavior: curl http://localhost:1234/users/1/behavior
 
-📦 Products
-GET /products - Browse all products with filters
 
-Query Parameters: category, min_rating, limit
 
-🔬 How the AI Works
-Step 1: Product Embeddings
-python
-# Each product gets converted to a 384-dimensional vector
-product_text = f"{name} {category} {description}"
-embedding = embedder.encode(product_text)
-Step 2: User Profile Vector
-python
-# User vector = average of all products they've interacted with
-user_products = [embeddings for each interacted product]
-user_embedding = np.mean(user_products, axis=0)
-Step 3: Similarity Matching
-python
-# Find most similar products to user's preferences
-similarity_scores = cosine_similarity([user_embedding], all_product_embeddings)
-recommended_indices = np.argsort(similarity_scores)[::-1]
-Step 4: Intelligent Filtering
-Excludes products user already purchased
+Example Output
+For userId=1, productId=19 (Sweater):
+Explanation for User 1, Product 19 (Sweater):
+Hey, I think this Sweater is perfect for you! You’ve been eyeing comfy clothes like sweaters and denim trousers, checking them out multiple times. You’ve bought similar items, giving them high ratings around 4.2, and left reviews like “Love the cozy fit!” Your style leans toward quality, versatile pieces, and this sweater’s premium fabric, rated 4.5, fits that vibe perfectly. It’s ideal for casual days or layering up. It’s just the kind of thing you love, and it’ll fit right into your style!
+Metrics: Length = 102, Jaccard Overlap = 0.46, Sentiment Score = 0.93
 
-Filters by minimum rating threshold
+Current State
 
-Returns top-k most relevant products
+Strengths:
+Delivers top-5 recommendations with ~100-word, conversational explanations.
+Handles Clothing-heavy recommendations (e.g., Sweater, Jacket) based on user behavior in ecommerce.db.
+Robust sentiment analysis with keyword fallback.
+Scalable FastAPI app with clear endpoints and error handling.
 
-💡 Key Features
-✅ Implemented
-Real-time recommendations with sub-second response time
 
-Personalized explanations for why each product is recommended
+Limitations:
+Recommendations are Clothing-heavy, likely due to biased ecommerce.db data.
+Keyword-based sentiment analysis is simple; distilbert requires a valid Hugging Face token.
+Mistral (7B) requires ~14GB VRAM, which may not suit smaller setups (TinyLLaMA used for testing).
 
-User behavior analysis with purchase history and preferences
 
-RESTful API with proper error handling and validation
 
-CORS support for frontend integration
+Future Steps
 
-Health monitoring with system status checks
+Diversify Recommendations: Modify generate_data.py to balance categories in ecommerce.db.
+Improve Sentiment: Resolve distilbert 401 errors with a valid token or integrate a local sentiment model.
+Flask API: Transition to Flask for compatibility with existing systems (planned as Step 5, app.py).
+Optimize Explanations: Fine-tune Mistral prompts or switch to smaller LLMs (e.g., Phi-2) for low-memory setups.
 
-🎯 Smart Filtering
-Rating-based filtering: Only show highly-rated products
+Troubleshooting
 
-Duplicate prevention: Never recommend purchased items
+Repetitive Explanations: Adjust no_repeat_ngram_size in generate_explanation or refine humanize_explanation regex.
+Short Explanations: Increase length_penalty (e.g., 2.0) or num_predict in Ollama payload.
+Low Jaccard: Verify context:from fastapi_app import retrieve_context
+print(retrieve_context(1, 19))
 
-Category preferences: Prioritize user's favorite categories
 
-📈 Example Usage
-Get User Profile
-bash
-curl http://localhost:8080/users/1/behavior
-Generate Recommendations
-bash
-curl -X POST http://localhost:8080/recommendations \
-  -H "Content-Type: application/json" \
-  -d '{"user_id": 1, "top_k": 3, "min_rating": 4.5}'
-🗃️ Sample Data
-The synthetic database includes:
+Database Issues:conn = sqlite3.connect('ecommerce.db')
+print(pd.read_sql('SELECT * FROM interactions WHERE userId = 1', conn))
+conn.close()
 
-50+ diverse products across multiple categories
 
-Multiple user profiles with different purchase histories
+Ollama Errors: Ensure Ollama server is running (ollama run mistral:7b-instruct-q4_K_M).
+TensorFlow Warnings:set TF_ENABLE_ONEDNN_OPTS=0
 
-Realistic interactions (views, purchases, ratings)
 
-Balanced distribution of products and user preferences
 
-🔍 Technical Details
-Performance Optimizations
-Embedding caching - Product vectors computed once at startup
+Contributors
 
-Efficient similarity - Vectorized operations with NumPy
+You: Designed the recommendation system, implemented generate_recom.py with Flan-T5-Base and TinyLLaMA, refined prompts for human-like explanations, addressed repetitive outputs, and integrated FastAPI with Mistral via Ollama.
 
-Memory management - GPU support when available, CPU fallback
-
-Error Handling
-Graceful fallbacks - Works even if external services fail
-
-Input validation - Pydantic models for all API requests
-
-Comprehensive logging - Detailed request/response tracking
-
-🛠️ Development Notes
-Model Selection
-Chose all-MiniLM-L6-v2 for balance of performance and accuracy
-
-384-dimensional embeddings provide good semantic understanding
-
-Fast inference suitable for real-time applications
-
-Database Design
-Normalized schema for efficient queries
-
-Separate interactions table for flexible analytics
-
-Text-based interactions field for simple user history
-
-🚀 Potential Enhancements
-Short-term
-User authentication and sessions
-
-Real-time interaction tracking
-
-A/B testing framework
-
-Long-term
-Deep learning models for better recommendations
-
-Multi-modal recommendations (images + text)
-
-Real-time user behavior streaming
-
-📞 Support
-If you encounter issues:
-
-Check that all dependencies are installed
-
-Verify the database file exists and is accessible
-
-Check the console logs for error messages
-
-Ensure port 1234 is available
-
-
-
-
-
+License
+MIT License
