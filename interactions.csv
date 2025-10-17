@@ -1,0 +1,101 @@
+productId,productName,productCategory,price,qtyBought,productDescription,userId,userName,reviewId,review,boughtStatus,viewStatus,returnStatus,avgRating
+28,Power Adapter,Electronics,127.35,1,Compact Power Adapter for tech enthusiasts.,18,User_18,REV_1,"Decent product, could be better.",True,True,False,3.86
+37,Philosophy Essays,Books,100.28,4,Engaging Philosophy Essays for knowledge seekers.,2,User_2,REV_2,,True,True,True,1.93
+13,Earth Science Guide,Books,142.39,3,Engaging Earth Science Guide for knowledge seekers.,16,User_16,REV_3,,True,True,True,3.68
+7,Sweater,Clothing,119.91,0,Stylish Sweater for all occasions.,12,User_12,REV_4,"Really disappointed, poor quality.",False,True,False,2.53
+43,Coffee Table,Home,82.8,4,Functional Coffee Table with sleek design.,12,User_12,REV_5,"Broke after a week, not great.",True,True,True,4.0
+50,Sweater,Clothing,162.46,1,Comfortable Sweater with premium fabric.,1,User_1,REV_6,Excellent value for money!,True,True,True,4.32
+14,Cotton Blanket,Home,155.75,0,Modern Cotton Blanket for home convenience.,3,User_3,REV_7,"Decent product, could be better.",False,False,False,4.41
+45,Denim Trousers,Clothing,70.93,1,Comfortable Denim Trousers with premium fabric.,26,User_26,REV_8,,True,True,False,4.1
+22,Night Cream,Beauty,46.14,0,Nourishing Night Cream with natural ingredients.,10,User_10,REV_9,,False,False,False,3.1
+38,Lip Balm,Beauty,51.69,0,Gentle Lip Balm for daily care.,21,User_21,REV_10,,False,True,False,4.78
+38,Lip Balm,Beauty,51.69,2,Gentle Lip Balm for daily care.,16,User_16,REV_11,"Great product, highly recommend!",True,True,True,4.78
+29,Science Textbook,Books,80.03,0,Informative Science Textbook for learning.,8,User_8,REV_12,,False,True,False,3.11
+44,Yoga Mat,Sports,93.04,5,Durable Yoga Mat for intense training.,23,User_23,REV_13,,True,True,True,4.01
+48,Earbuds,Electronics,51.41,1,Compact Earbuds for tech enthusiasts.,3,User_3,REV_14,,True,True,False,3.26
+36,High Heels,Clothing,153.69,5,Stylish High Heels for all occasions.,17,User_17,REV_15,"Decent product, could be better.",True,True,True,3.51
+4,Fiction Novel,Books,11.2,0,Engaging Fiction Novel for knowledge seekers.,7,User_7,REV_16,,False,False,False,3.95
+45,Denim Trousers,Clothing,70.93,3,Comfortable Denim Trousers with premium fabric.,1,User_1,REV_17,,True,True,False,4.1
+44,Yoga Mat,Sports,93.04,0,Durable Yoga Mat for intense training.,13,User_13,REV_18,Good quality but pricey.,False,False,False,4.01
+25,Vacuum Cleaner,Home,88.54,0,Durable Vacuum Cleaner for daily use.,14,User_14,REV_19,,False,True,False,3.48
+13,Earth Science Guide,Books,142.39,0,Engaging Earth Science Guide for knowledge seekers.,14,User_14,REV_20,Good quality but pricey.,False,True,False,3.68
+8,Jacket,Clothing,71.35,0,Comfortable Jacket with premium fabric.,6,User_6,REV_21,,False,False,False,4.0
+33,Sweater,Clothing,5.63,0,Trendy Sweater for everyday wear.,27,User_27,REV_22,"Broke after a week, not great.",False,True,False,3.51
+15,Denim Trousers,Clothing,79.12,3,Elegant Denim Trousers for a chic look.,17,User_17,REV_23,,True,True,True,3.3
+9,High Heels,Clothing,24.93,1,Elegant High Heels for a chic look.,11,User_11,REV_24,,True,True,False,2.49
+37,Philosophy Essays,Books,100.28,0,Engaging Philosophy Essays for knowledge seekers.,20,User_20,REV_25,"Really disappointed, poor quality.",False,True,False,1.93
+3,Bedside Clock,Home,178.98,0,Modern Bedside Clock for home convenience.,27,User_27,REV_26,"Great product, highly recommend!",False,False,False,4.17
+15,Denim Trousers,Clothing,79.12,0,Elegant Denim Trousers for a chic look.,30,User_30,REV_27,,False,False,False,3.3
+12,Earbuds,Electronics,62.17,3,Durable Earbuds with long-lasting battery.,10,User_10,REV_28,,True,True,False,3.59
+36,High Heels,Clothing,153.69,0,Stylish High Heels for all occasions.,17,User_17,REV_29,,False,True,False,3.51
+42,Serum,Beauty,193.05,2,Gentle Serum for daily care.,16,User_16,REV_30,"Not as expected, average.",True,True,False,3.09
+33,Sweater,Clothing,5.63,4,Trendy Sweater for everyday wear.,9,User_9,REV_31,"Great product, highly recommend!",True,True,True,3.51
+50,Sweater,Clothing,162.46,3,Comfortable Sweater with premium fabric.,1,User_1,REV_32,"Fantastic purchase, love it!",True,True,True,4.32
+6,Earth Science Guide,Books,144.62,0,Informative Earth Science Guide for learning.,30,User_30,REV_33,Excellent value for money!,False,True,False,4.31
+17,Facewash,Beauty,135.68,2,Effective Facewash for radiant skin.,20,User_20,REV_34,,True,True,False,3.3
+40,Earbuds,Electronics,154.34,0,Sleek Earbuds for modern connectivity.,17,User_17,REV_35,,False,True,False,4.91
+30,Philosophy Essays,Books,194.36,0,Engaging Philosophy Essays for knowledge seekers.,29,User_29,REV_36,Excellent value for money!,False,True,False,2.9
+50,Sweater,Clothing,162.46,0,Comfortable Sweater with premium fabric.,10,User_10,REV_37,Excellent value for money!,False,False,False,4.32
+30,Philosophy Essays,Books,194.36,2,Engaging Philosophy Essays for knowledge seekers.,6,User_6,REV_38,"Really disappointed, poor quality.",True,True,True,2.9
+3,Bedside Clock,Home,178.98,0,Modern Bedside Clock for home convenience.,25,User_25,REV_39,"Decent product, could be better.",False,False,False,4.17
+34,Math Workbook,Books,39.84,0,Engaging Math Workbook for knowledge seekers.,3,User_3,REV_40,,False,True,False,3.25
+50,Sweater,Clothing,162.46,3,Comfortable Sweater with premium fabric.,12,User_12,REV_41,,True,True,False,4.32
+14,Cotton Blanket,Home,155.75,0,Modern Cotton Blanket for home convenience.,28,User_28,REV_42,"Fantastic purchase, love it!",False,False,False,4.41
+20,Coffee Table,Home,169.36,4,Modern Coffee Table for home convenience.,26,User_26,REV_43,Excellent value for money!,True,True,False,3.14
+38,Lip Balm,Beauty,51.69,3,Gentle Lip Balm for daily care.,24,User_24,REV_44,,True,True,False,4.78
+48,Earbuds,Electronics,51.41,5,Compact Earbuds for tech enthusiasts.,17,User_17,REV_45,,True,True,False,3.26
+10,Smartwatch,Electronics,170.26,0,Durable Smartwatch with long-lasting battery.,2,User_2,REV_46,"Really disappointed, poor quality.",False,True,False,2.11
+41,Kitchen Mixer,Home,189.64,0,Elegant Kitchen Mixer for cozy spaces.,16,User_16,REV_47,"Really disappointed, poor quality.",False,False,False,1.45
+9,High Heels,Clothing,24.93,5,Elegant High Heels for a chic look.,27,User_27,REV_48,"Decent product, could be better.",True,True,True,2.49
+26,Facewash,Beauty,199.48,0,Gentle Facewash for daily care.,15,User_15,REV_49,"Great product, highly recommend!",False,False,False,4.15
+35,Coffee Table,Home,169.13,0,Elegant Coffee Table for cozy spaces.,18,User_18,REV_50,"Pretty good, fast delivery!",False,True,False,3.56
+5,Evening Dress,Clothing,103.54,0,Stylish Evening Dress for all occasions.,25,User_25,REV_51,,False,False,False,3.45
+20,Coffee Table,Home,169.36,0,Modern Coffee Table for home convenience.,21,User_21,REV_52,"Really disappointed, poor quality.",False,True,False,3.14
+2,Evening Dress,Clothing,32.21,0,Stylish Evening Dress for all occasions.,29,User_29,REV_53,Excellent value for money!,False,True,False,4.55
+11,Tablet,Electronics,109.56,3,Compact Tablet for tech enthusiasts.,11,User_11,REV_54,,True,True,True,3.28
+4,Fiction Novel,Books,11.2,1,Engaging Fiction Novel for knowledge seekers.,5,User_5,REV_55,Good quality but pricey.,True,True,False,3.95
+46,Earth Science Guide,Books,6.4,0,Engaging Earth Science Guide for knowledge seekers.,14,User_14,REV_56,"Decent product, could be better.",False,True,False,3.76
+30,Philosophy Essays,Books,194.36,0,Engaging Philosophy Essays for knowledge seekers.,19,User_19,REV_57,,False,True,False,2.9
+49,Floral Skirt,Clothing,146.05,1,Elegant Floral Skirt for a chic look.,12,User_12,REV_58,,True,True,False,3.08
+33,Sweater,Clothing,5.63,0,Trendy Sweater for everyday wear.,9,User_9,REV_59,Good quality but pricey.,False,True,False,3.51
+39,Science Textbook,Books,21.7,4,Informative Science Textbook for learning.,21,User_21,REV_60,"Broke after a week, not great.",True,True,False,4.38
+8,Jacket,Clothing,71.35,0,Comfortable Jacket with premium fabric.,15,User_15,REV_61,"Broke after a week, not great.",False,False,False,4.0
+40,Earbuds,Electronics,154.34,0,Sleek Earbuds for modern connectivity.,3,User_3,REV_62,"Amazing features, worth every penny!",False,True,False,4.91
+9,High Heels,Clothing,24.93,0,Elegant High Heels for a chic look.,5,User_5,REV_63,"Really disappointed, poor quality.",False,True,False,2.49
+10,Smartwatch,Electronics,170.26,0,Durable Smartwatch with long-lasting battery.,26,User_26,REV_64,,False,True,False,2.11
+42,Serum,Beauty,193.05,0,Gentle Serum for daily care.,18,User_18,REV_65,,False,True,False,3.09
+5,Evening Dress,Clothing,103.54,3,Stylish Evening Dress for all occasions.,9,User_9,REV_66,,True,True,True,3.45
+7,Sweater,Clothing,119.91,4,Stylish Sweater for all occasions.,1,User_1,REV_67,,True,True,True,2.53
+19,Sweater,Clothing,78.99,0,Comfortable Sweater with premium fabric.,20,User_20,REV_68,Excellent value for money!,False,False,False,2.6
+5,Evening Dress,Clothing,103.54,0,Stylish Evening Dress for all occasions.,22,User_22,REV_69,"Pretty good, fast delivery!",False,True,False,3.45
+20,Coffee Table,Home,169.36,0,Modern Coffee Table for home convenience.,12,User_12,REV_70,"Really disappointed, poor quality.",False,True,False,3.14
+33,Sweater,Clothing,5.63,0,Trendy Sweater for everyday wear.,13,User_13,REV_71,"Really disappointed, poor quality.",False,True,False,3.51
+49,Floral Skirt,Clothing,146.05,0,Elegant Floral Skirt for a chic look.,23,User_23,REV_72,,False,True,False,3.08
+29,Science Textbook,Books,80.03,4,Informative Science Textbook for learning.,1,User_1,REV_73,"Pretty good, fast delivery!",True,True,False,3.11
+23,Sweater,Clothing,82.15,5,Elegant Sweater for a chic look.,22,User_22,REV_74,,True,True,False,3.01
+5,Evening Dress,Clothing,103.54,1,Stylish Evening Dress for all occasions.,16,User_16,REV_75,,True,True,False,3.45
+42,Serum,Beauty,193.05,4,Gentle Serum for daily care.,10,User_10,REV_76,,True,True,True,3.09
+17,Facewash,Beauty,135.68,3,Effective Facewash for radiant skin.,3,User_3,REV_77,"Decent product, could be better.",True,True,False,3.3
+20,Coffee Table,Home,169.36,0,Modern Coffee Table for home convenience.,19,User_19,REV_78,"Amazing features, worth every penny!",False,False,False,3.14
+40,Earbuds,Electronics,154.34,1,Sleek Earbuds for modern connectivity.,23,User_23,REV_79,,True,True,False,4.91
+45,Denim Trousers,Clothing,70.93,1,Comfortable Denim Trousers with premium fabric.,15,User_15,REV_80,Excellent value for money!,True,True,True,4.1
+44,Yoga Mat,Sports,93.04,1,Durable Yoga Mat for intense training.,7,User_7,REV_81,,True,True,True,4.01
+44,Yoga Mat,Sports,93.04,1,Durable Yoga Mat for intense training.,25,User_25,REV_82,"Fantastic purchase, love it!",True,True,False,4.01
+13,Earth Science Guide,Books,142.39,2,Engaging Earth Science Guide for knowledge seekers.,13,User_13,REV_83,Good quality but pricey.,True,True,True,3.68
+36,High Heels,Clothing,153.69,5,Stylish High Heels for all occasions.,29,User_29,REV_84,"Decent product, could be better.",True,True,False,3.51
+41,Kitchen Mixer,Home,189.64,4,Elegant Kitchen Mixer for cozy spaces.,22,User_22,REV_85,,True,True,True,1.45
+8,Jacket,Clothing,71.35,2,Comfortable Jacket with premium fabric.,12,User_12,REV_86,"Pretty good, fast delivery!",True,True,False,4.0
+23,Sweater,Clothing,82.15,1,Elegant Sweater for a chic look.,13,User_13,REV_87,,True,True,False,3.01
+39,Science Textbook,Books,21.7,3,Informative Science Textbook for learning.,28,User_28,REV_88,,True,True,False,4.38
+4,Fiction Novel,Books,11.2,0,Engaging Fiction Novel for knowledge seekers.,28,User_28,REV_89,"Fantastic purchase, love it!",False,True,False,3.95
+24,Running Shoes,Clothing,32.23,4,Trendy Running Shoes for everyday wear.,18,User_18,REV_90,,True,True,False,3.28
+8,Jacket,Clothing,71.35,0,Comfortable Jacket with premium fabric.,1,User_1,REV_91,"Pretty good, fast delivery!",False,False,False,4.0
+26,Facewash,Beauty,199.48,0,Gentle Facewash for daily care.,28,User_28,REV_92,Good quality but pricey.,False,True,False,4.15
+43,Coffee Table,Home,82.8,0,Functional Coffee Table with sleek design.,19,User_19,REV_93,"Pretty good, fast delivery!",False,True,False,4.0
+6,Earth Science Guide,Books,144.62,0,Informative Earth Science Guide for learning.,22,User_22,REV_94,,False,False,False,4.31
+29,Science Textbook,Books,80.03,3,Informative Science Textbook for learning.,21,User_21,REV_95,,True,True,False,3.11
+19,Sweater,Clothing,78.99,0,Comfortable Sweater with premium fabric.,19,User_19,REV_96,"Really disappointed, poor quality.",False,False,False,2.6
+3,Bedside Clock,Home,178.98,5,Modern Bedside Clock for home convenience.,12,User_12,REV_97,,True,True,True,4.17
+32,Coffee Table,Home,26.75,0,Durable Coffee Table for daily use.,6,User_6,REV_98,,False,True,False,3.69
+17,Facewash,Beauty,135.68,0,Effective Facewash for radiant skin.,24,User_24,REV_99,,False,True,False,3.3
+7,Sweater,Clothing,119.91,0,Stylish Sweater for all occasions.,10,User_10,REV_100,"Pretty good, fast delivery!",False,True,False,2.53
