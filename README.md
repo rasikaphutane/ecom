@@ -13,7 +13,7 @@ Uses cosine similarity on all-MiniLM-L6-v2 embeddings based on purchases, views,
 
 ## ✅ Conversational Explanations (~100 words)
 
-Generated using TinyLLaMA, Mistral, or Flan-T5.
+Generated using TinyLLaMA, Mistral, or Flan-T5.( Multiple AIs for fallback)
 Example: “Hey, this Sweater is perfect for you!”
 
 ## ✅ Sentiment Analysis
@@ -57,7 +57,9 @@ cd ecommerce-recommendation
 pip install fastapi uvicorn pandas numpy sentence-transformers torch transformers scikit-learn requests nltk
 python -m nltk.downloader punkt punkt_tab
 
-3. Set Hugging Face Token
+or just do pip install requirements.txt
+
+4. Set Hugging Face Token
 Windows: 
 set HUGGINGFACE_TOKEN=hf_xxx
 
@@ -81,6 +83,9 @@ http://localhost:1234/docs
 Health Check
 curl http://localhost:1234/
 
+Products Check 
+Enter the type and no. of items to get a list
+
 Get Recommendations
 curl -X POST http://localhost:1234/recommendations \
 -H "Content-Type: application/json" \
@@ -96,9 +101,15 @@ curl -X POST http://localhost:1234/recommendations \
   "explanation": "Hey, I think this Sweater is perfect for you! You’ve been eyeing comfy clothes like sweaters..."
 }
 
-# feel free to use/modify!!
+## To run locally
+
+Generate the recommendations locally by running 
+python generate_recom.py
+
+# Feel free to use/modify!!
 📜 License
 
 MIT License – free to use and modify.
+
 
 
