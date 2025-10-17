@@ -54,22 +54,13 @@ git clone <repository-url>
 cd ecommerce-recommendation
 
 2. Install Dependencies
-pip install fastapi uvicorn pandas numpy sentence-transformers torch transformers scikit-learn requests nltk
-python -m nltk.downloader punkt punkt_tab or just do pip install requirements.txt
+pip install requirements.txt
 
 4. Set Hugging Face Token
-a. Windows: 
-set HUGGINGFACE_TOKEN=hf_xxx
 
-b. Linux/Mac: 
-export HUGGINGFACE_TOKEN='hf_xxx'
-
-5. Initialize the Database
-python init_db.py
-python generate_data.py
-
-6. Start Ollama (for Mistral)
-ollama run mistral:7b-instruct-q4_K_M
+5. Start Ollama (for Mistral)
+ollama serve ( not needed but will be easier to monitor)
+ollama pull mistral
 
 ## ▶️ Run the FastAPI Server
 uvicorn main:app --host 0.0.0.0 --port 1234
@@ -108,6 +99,7 @@ python generate_recom.py
 📜 License
 
 MIT License – free to use and modify.
+
 
 
 
