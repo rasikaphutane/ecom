@@ -50,7 +50,7 @@ Server: Ollama
 
 # 🔧 Installation
 1. Clone the Repo
-git clone <repository-url>
+git clone https://github.com/rasikaphutane/ecom.git
 cd ecommerce-recommendation
 
 2. Install Dependencies
@@ -63,20 +63,12 @@ ollama serve ( not needed but will be easier to monitor)
 ollama pull mistral
 
 ## ▶️ Run the FastAPI Server
-uvicorn main:app --host 0.0.0.0 --port 1234
 
-## 🌐 API Access
-Swagger UI
-http://localhost:1234/docs
-
-Health Check
-curl http://localhost:1234/
-
-Products Check 
+## Products Check 
 Enter the type and no. of items to get a list
 
-Get Recommendations
-curl -X POST http://localhost:1234/recommendations \
+## Get Recommendations
+curl -X POST http://localhost:[portno.]/recommendations \
 -H "Content-Type: application/json" \
 -d '{"user_id": 1, "top_k": 5, "min_rating": 4.0}'
 
@@ -94,13 +86,4 @@ curl -X POST http://localhost:1234/recommendations \
 
 Generate the recommendations locally by running 
 python generate_recom.py
-
-# Feel free to use/modify!!
-📜 License
-
-MIT License – free to use and modify.
-
-
-
-
 
